@@ -15,12 +15,12 @@ bitbake
 
 Patch review:
 
-../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][whinlatter][2.12][PATCH" -s "Patch review" -b stable/2.12-nut -r stable/2.12-next
+../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][whinlatter][2.16][PATCH" -s "Patch review" -b stable/2.16-nut -r stable/2.16-next
 ../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org
 
 Patch merge:
 
-../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][whinlatter][2.12][PATCH" -s "Pull request (cover letter only)" -b stable/2.12-next -r origin/2.12
+../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][whinlatter][2.16][PATCH" -s "Pull request (cover letter only)" -b stable/2.16-next -r origin/2.16
 ../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org
 
 
