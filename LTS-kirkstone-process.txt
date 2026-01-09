@@ -8,7 +8,7 @@ scripts/send-pull-request -p pull-XXXXX -t openembedded-core@lists.openembedded.
 Patch merge:
 
 scripts/create-pull-request -u contrib -p "OE-core][kirkstone" -s "Pull request (cover letter only)" -b stable/kirkstone-next -r origin/kirkstone
-scripts/send-pull-request -p pull-XXXXX -t openembedded-core@lists.openembedded.org
+scripts/send-pull-request -p pull-XXXXX -t openembedded-core@lists.openembedded.org -C "Paul Barker <paul@pbarker.dev>"
 
 
 bitbake
@@ -21,7 +21,7 @@ Patch review:
 Patch merge:
 
 ../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][kirkstone][2.0][PATCH" -s "Pull request (cover letter only)" -b stable/2.0-next -r origin/2.0
-../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org -C "Paul Barker <paul@pbarker.dev>"
 
 
 yocto-docs
@@ -34,7 +34,7 @@ Patch review:
 Patch merge:
 
 ../openembedded-core/scripts/create-pull-request -u origin -p "yocto-docs][kirkstone" -s "Pull request (cover letter only)" -b contrib/kirkstone-next -r origin/kirkstone
-../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t docs@lists.yoctoproject.org
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t docs@lists.yoctoproject.org -C "Paul Barker <paul@pbarker.dev>"
 
 
 meta-yocto
@@ -47,7 +47,7 @@ Patch review:
 Patch merge
 
 ../openembedded-core/scripts/create-pull-request -u origin -p "meta-yocto][kirkstone" -s "Pull request (cover letter only)" -b contrib/kirkstone-next -r origin/kirkstone
-../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t poky@lists.yoctoproject.org
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t poky@lists.yoctoproject.org -C "Paul Barker <paul@pbarker.dev>"
 
 
 yocto-autobuilder2
@@ -68,7 +68,7 @@ Patch review:
 Patch merge
 
 ../openembedded-core/scripts/create-pull-request -u origin -p "yocto-autobuilder-helper][kirkstone" -s "Pull request (cover letter only)" -b contrib/kirkstone-next -r origin/kirkstone
-../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t yocto-patches@lists.yoctoproject.org
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t yocto-patches@lists.yoctoproject.org -C "Paul Barker <paul@pbarker.dev>"
 
 
 meta-openembedded
@@ -81,7 +81,7 @@ Patch review:
 Patch merge:
 
 ../openembedded-core/scripts/create-pull-request -u contrib -p "oe][meta-oe][kirkstone" -s "Pull request (cover letter only)" -b sakoman/kirkstone -r origin/kirkstone
-../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t openembedded-devel@lists.openembedded.org
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t openembedded-devel@lists.openembedded.org -C "Paul Barker <paul@pbarker.dev>"
 
 For assembling poky:
 
