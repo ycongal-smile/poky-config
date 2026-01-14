@@ -2,7 +2,7 @@
 branch=${1:-kirkstone}
 nextbranch=${branch}-nut
 
-cd ~/Repos/poky
+cd /home/yocon/Documents/projets/yocto/maint_lts/$branch/poky/
 
 layerfile=combo-layer-stable-${branch}-nut.conf
 
