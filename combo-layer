@@ -828,8 +828,8 @@ def apply_patchlist(conf, repos):
                         logger.info("Please manually apply patch %s" % patchdisp)
                         logger.info("Note: if you exit and continue applying without manually applying the patch, it will be skipped")
                         if not drop_to_shell():
-                            if prevrev != repo['last_revision']:
-                                conf.update(name, "last_revision", prevrev)
+                            #if prevrev != repo['last_revision']:
+                            #    conf.update(name, "last_revision", prevrev)
                             sys.exit(1)
                 prevrev = lastrev
                 i += 1
@@ -856,8 +856,8 @@ def apply_patchlist(conf, repos):
             logger.info("No patches to apply from %s" % name)
             lastrev = branchrev
 
-        if lastrev != repo['last_revision']:
-            conf.update(name, "last_revision", lastrev)
+        #if lastrev != repo['last_revision']:
+        #    conf.update(name, "last_revision", lastrev)
 
 def action_splitpatch(conf, args):
     """
