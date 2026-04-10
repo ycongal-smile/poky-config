@@ -21,7 +21,7 @@ Patch review:
 Patch merge:
 
 ../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][kirkstone][2.0][PATCH" -s "Pull request (cover letter only)" -b stable/2.0-next -r origin/2.0
-../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org -C "Paul Barker <paul@pbarker.dev>"
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org -C "Richard Purdie <richard.purdie@linuxfoundation.org>"
 
 
 yocto-docs
