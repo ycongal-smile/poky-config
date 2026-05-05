@@ -41,12 +41,12 @@ meta-yocto
 
 Patch review:
 
-../openembedded-core/scripts/create-pull-request -u origin -p "meta-yocto][scarthgap" -s "Patch review" -b contrib/scarthgap-next -r origin/scarthgap
+../openembedded-core/scripts/create-pull-request -u contrib -p "meta-yocto][scarthgap" -s "Patch review" -b stable/scarthgap-nut -r stable/scarthgap-next
 ../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t poky@lists.yoctoproject.org
 
 Patch merge
 
-../openembedded-core/scripts/create-pull-request -u origin -p "meta-yocto][scarthgap" -s "Pull request (cover letter only)" -b contrib/scarthgap-next -r origin/scarthgap
+../openembedded-core/scripts/create-pull-request -u contrib -p "meta-yocto][scarthgap" -s "Pull request (cover letter only)" -b stable/scarthgap-next -r origin/scarthgap
 ../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t poky@lists.yoctoproject.org -C "Paul Barker <paul@pbarker.dev>"
 
 
