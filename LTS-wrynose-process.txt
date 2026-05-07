@@ -1,0 +1,109 @@
+openembedded-core
+
+Patch review:
+
+scripts/create-pull-request -u contrib -p "OE-core][wrynose" -s "Patch review" -b stable/wrynose-nut -r stable/wrynose-next
+scripts/send-pull-request -p pull-XXXXX -t openembedded-core@lists.openembedded.org
+
+Patch merge:
+
+scripts/create-pull-request -u contrib -p "OE-core][wrynose" -s "Pull request (cover letter only)" -b stable/wrynose-next -r origin/wrynose
+scripts/send-pull-request -p pull-XXXXX -t openembedded-core@lists.openembedded.org -C "Paul Barker <paul@pbarker.dev>"
+
+
+bitbake
+
+Patch review:
+
+../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][wrynose][2.18][PATCH" -s "Patch review" -b stable/2.18-nut -r stable/2.18-next
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org
+
+Patch merge:
+
+../openembedded-core/scripts/create-pull-request -u contrib -p "bitbake][wrynose][2.18][PATCH" -s "Pull request (cover letter only)" -b stable/2.18-next -r origin/2.18
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t bitbake-devel@lists.openembedded.org -C "Richard Purdie <richard.purdie@linuxfoundation.org>"
+
+
+yocto-docs
+
+Patch review:
+
+../openembedded-core/scripts/create-pull-request -u origin -p "yocto-docs][wrynose" -s "Patch review" -b contrib/sakoman/wrynose-next -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t docs@lists.yoctoproject.org
+
+Patch merge:
+
+../openembedded-core/scripts/create-pull-request -u origin -p "yocto-docs][wrynose" -s "Pull request (cover letter only)" -b contrib/wrynose-next -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t docs@lists.yoctoproject.org -C "Paul Barker <paul@pbarker.dev>"
+
+
+meta-yocto
+
+Patch review:
+
+../openembedded-core/scripts/create-pull-request -u contrib -p "meta-yocto][wrynose" -s "Patch review" -b stable/wrynose-nut -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t poky@lists.yoctoproject.org
+
+Patch merge
+
+../openembedded-core/scripts/create-pull-request -u contrib -p "meta-yocto][wrynose" -s "Pull request (cover letter only)" -b stable/wrynose-next -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t poky@lists.yoctoproject.org -C "Paul Barker <paul@pbarker.dev>"
+
+
+yocto-autobuilder2
+
+Patch review:
+
+../openembedded-core/scripts/create-pull-request -u origin -p "yocto-autobuilder2" -s "Patch review" -b contrib/sakoman -r origin/master
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t yocto-patches@lists.yoctoproject.org
+
+
+yocto-autobuilder-helper
+
+Patch review:
+
+../openembedded-core/scripts/create-pull-request -u origin -p "yocto-autobuilder-helper][wrynose" -s "Patch review" -b contrib/ycongal/wrynose -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t yocto-patches@lists.yoctoproject.org
+
+Patch merge
+
+../openembedded-core/scripts/create-pull-request -u origin -p "yocto-autobuilder-helper][wrynose" -s "Pull request (cover letter only)" -b contrib/wrynose-next -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t yocto@lists.yoctoproject.org -C "Paul Barker <paul@pbarker.dev>"
+
+
+meta-openembedded
+
+Patch review:
+
+../openembedded-core/scripts/create-pull-request -u contrib -p "oe][meta-oe][wrynose" -s "Patch review" -b sakoman/wrynose -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t openembedded-devel@lists.openembedded.org
+
+Patch merge:
+
+../openembedded-core/scripts/create-pull-request -u contrib -p "oe][meta-oe][wrynose" -s "Pull request (cover letter only)" -b sakoman/wrynose -r origin/wrynose
+../openembedded-core/scripts/send-pull-request -p pull-XXXXX -t openembedded-devel@lists.openembedded.org -C "Paul Barker <paul@pbarker.dev>"
+
+Log into builders:
+
+$ ssh sakoman@debian8-ty-1.yocto.io
+$ sudo -iu pokybuild
+
+Reproducibility
+
+Log will say:
+2021-10-13 18:22:59,267 - oe-selftest - INFO - Non-reproducible packages will be copied to /srv/autobuilder/autobuilder.yoctoproject.org/pub/repro-fail/oe-reproducible-20211013-5yj4xlhv
+
+Translate to: 
+https://autobuilder.yocto.io/pub/repro-fail/oe-reproducible-20211013-5yj4xlhv/
+
+Use web browser to examine files.
+
+Set up tap devices for qemuptest:
+
+sudo `which runqemu-gen-tapdevs ` 1000 sharedsource 8 tmp/sysroots-components/x86_64/qemu-helper-native/usr/bin
+
+ptest log files (example):
+
+https://autobuilder.yocto.io/pub/non-release/20230505-4/testresults/qemuarm64-ptest/glib-networking.log
+
+
