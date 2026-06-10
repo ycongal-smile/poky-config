@@ -76,15 +76,10 @@ class Configuration(object):
                 if name == "commit_msg":
                     self.commit_msg_template = value
 
-        conffiles = self.conffile.split(":")
-
+        logger.debug("Loading config file %s" % self.conffile)
         self.parser = configparser.ConfigParser()
-        for conffile in conffiles:
-            logger.debug("Loading config file %s" % conffile)
-            with open(conffile) as f:
-                self.parser.read_file(f)
-
-        self.conffile = conffiles[0]
+        with open(self.conffile) as f:
+            self.parser.read_file(f)
 
         # initialize default values
         self.commit_msg_template = "Automatic commit to update last_revision"
@@ -1340,7 +1335,7 @@ Action:
   sync-revs [components] update the config file's last_revision for each repository
   splitpatch [commit]    generate commit patch and split per component, default commit is HEAD""")
 
-    parser.add_option("-c", "--conf", help = "specify the config file(s) (conf/combo-layer.conf is the default). Multiple files can be specified, separated by a colon.",
+    parser.add_option("-c", "--conf", help = "specify the config file (conf/combo-layer.conf is the default).",
                action = "store", dest = "conffile", default = "conf/combo-layer.conf")
 
     parser.add_option("-i", "--interactive", help = "interactive mode, user can edit the patch list and patches",
@@ -1368,7 +1363,7 @@ Action:
     elif args[1] not in actions:
         logger.error("Unsupported action %s, exiting\n" % (args[1]))
         parser.print_help()
-    elif not all([os.path.exists(f) for f in options.conffile.split(":")]):
+    elif not os.path.exists(options.conffile):
         logger.error("No valid config file, exiting\n")
         parser.print_help()
     else:
