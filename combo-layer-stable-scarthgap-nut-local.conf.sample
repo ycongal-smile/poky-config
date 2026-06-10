@@ -1,0 +1,15 @@
+[bitbake]
+local_repo_dir = /home/yocon/Documents/projets/yocto/maint_lts/bitbake
+hook = /home/yocon/Documents/projets/yocto/maint_lts/poky-config/combo-layerhook-bitbake.sh
+
+[oe-core]
+local_repo_dir = /home/yocon/Documents/projets/yocto/maint_lts/openembedded-core
+hook = /home/yocon/Documents/projets/yocto/maint_lts/poky-config/combo-layerhook-oecore.sh
+
+[yocto-docs]
+local_repo_dir = /home/yocon/Documents/projets/yocto/maint_lts/yocto-docs
+hook = /home/yocon/Documents/projets/yocto/maint_lts/poky-config/combo-layerhook-yoctodocs.sh
+
+[meta-yocto]
+local_repo_dir = /home/yocon/Documents/projets/yocto/maint_lts/meta-yocto
+hook = /home/yocon/Documents/projets/yocto/maint_lts/poky-config/combo-layerhook-metayocto.sh
