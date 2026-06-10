@@ -108,7 +108,7 @@ class Configuration(object):
                 logger.debug("Loading local config file %s" % self.localconffile)
                 self.localparser = configparser.ConfigParser()
                 with open(self.localconffile) as f:
-                    self.localparser.readfp(f)
+                    self.localparser.read_file(f)
 
                 for section in self.localparser.sections():
                     if '|' in section:
