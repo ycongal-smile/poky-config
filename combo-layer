@@ -638,6 +638,13 @@ def action_update(conf, args):
     repos = get_repos(conf, components)
 
     # make sure combo repo is clean
+    if conf.reset_poky:
+        logger.info("Resetting poky repository to %s..." % conf.reset_poky)
+        try:
+            runcmd("git am --abort", printerr=False)
+        except subprocess.CalledProcessError:
+            pass
+        runcmd("git reset --hard %s" % conf.reset_poky)
     check_repo_clean(os.getcwd())
 
     # Check whether we keep the component histories. Must be
@@ -1353,6 +1360,10 @@ Action:
 
     parser.add_option("-H", "--history", help = "import full history of components during init",
                       action = "store_true", default = False)
+
+    parser.add_option("--reset-poky",
+               help = "git reset --hard the poky branch to <commit> before applying patches",
+               action = "store", dest = "reset_poky", default = None)
 
     options, args = parser.parse_args(sys.argv)
 
